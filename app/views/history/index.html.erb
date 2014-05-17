@@ -1,0 +1,9 @@
+<h2 id = "title" class="text-center">Tickets History</h2>
+
+<% @tickets.each do |t| %>
+	<div class="label label-default"><%= t.name %></div>
+	<div><%= t.email %></div>
+	<div><%= t.department %></div>
+	<div><%= t.subject %></div>
+	<div><%= t.request %></div>
+<% end %>
