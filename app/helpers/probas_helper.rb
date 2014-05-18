@@ -1,2 +1,0 @@
-module ProbasHelper
-end
