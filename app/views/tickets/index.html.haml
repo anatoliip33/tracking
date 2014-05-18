@@ -8,6 +8,7 @@
       %th Department
       %th Subject
       %th Request
+      %th Code
       %th
       %th
       %th
@@ -20,6 +21,7 @@
         %td= ticket.department
         %td= ticket.subject
         %td= ticket.request
+        %td= ticket.code
         %td= link_to 'Show', ticket
         %td= link_to 'Edit', edit_ticket_path(ticket)
         %td= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }

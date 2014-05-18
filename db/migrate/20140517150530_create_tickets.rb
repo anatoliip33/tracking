@@ -7,6 +7,7 @@ class CreateTickets < ActiveRecord::Migration
     	t.string :subject
     	t.text :request
       t.string :status
+      t.string :code
 
       t.timestamps
     end
