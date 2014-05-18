@@ -1,15 +1,9 @@
 Tracking::Application.routes.draw do
-  resources :requests
 
-  resources :ticket
-
-  resources :probas
-
- 
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  
+  resources :tickets
 
   root to: 'history#index'
 end
