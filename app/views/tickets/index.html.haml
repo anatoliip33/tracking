@@ -1,6 +1,6 @@
-%h1 Listing tickets
+%h1#title.text-center Listing tickets
 
-%table
+%table{:class=>"table table-striped", :id =>"table"}
   %thead
     %tr
       %th Name
@@ -26,4 +26,4 @@
 
 %br
 
-= link_to 'New Ticket', new_ticket_path
+= link_to 'New Ticket', new_ticket_path, :class => "btn btn-primary", :id => "new_ticket"
