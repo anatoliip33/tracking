@@ -1,24 +1,24 @@
 %p#notice= notice
+.container
+  %p
+    %strong Name:
+    = @ticket.name
 
-%p
-  %strong Name:
-  = @ticket.name
+  %p
+    %strong Email:
+    = @ticket.email
 
-%p
-  %strong Email:
-  = @ticket.email
+  %p
+    %strong Department:
+    = @ticket.department
 
-%p
-  %strong Department:
-  = @ticket.department
+  %p
+    %strong Subject:
+    = @ticket.subject
 
-%p
-  %strong Subject:
-  = @ticket.subject
+  %p
+    %strong Request:
+    = @ticket.request
 
-%p
-  %strong Request:
-  = @ticket.request
-
-= link_to 'Edit', edit_ticket_path(@ticket), :class => "btn btn-primary"
-= link_to 'Listing tickets', tickets_path, :class => "btn btn-primary"
+  = link_to 'Edit', edit_ticket_path(@ticket), :class => "btn btn-primary"
+  = link_to 'Listing tickets', tickets_path, :class => "btn btn-success"

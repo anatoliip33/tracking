@@ -2,6 +2,12 @@ ActiveAdmin.register Ticket do
 
   permit_params :id, :name, :email, :department, :subject, :request, :status, :code
 
+  scope :Waiting_for_Staff_Response, :default => true
+  scope :Waiting_for_Customer
+  scope :On_Hold
+  scope :Cancelled
+  scope :Completed
+
 index do
     selectable_column
     id_column

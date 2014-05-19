@@ -1,12 +1,22 @@
 #title {
+      margin: 30px 0 30px 50px;
 	color: green
 }
 
 .container{
   display: block;
-  margin: 50px;
+  margin: 50px 0 0 30px;
 }
 
 #new_ticket{
   margin-left: 50px;
+}
+
+.quirck{
+  margin: 0 0 20px 0;
+  width: 300px;
+}
+
+#top{
+  margin-top:20px;
 }
