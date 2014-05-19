@@ -1,6 +1,6 @@
 ActiveAdmin.register Ticket do
 
-  permit_params :id, :name, :email, :department, :subject, :request, :status
+  permit_params :id, :name, :email, :department, :subject, :request, :status, :code
 
 index do
     selectable_column
@@ -9,7 +9,7 @@ index do
     column :email
     column :department
     column :request
-    column :status
+    column :code
     column :created_at
     actions
   end

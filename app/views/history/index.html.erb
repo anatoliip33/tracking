@@ -9,3 +9,5 @@
 <% end %>
 <br>
 <%= link_to 'Tickets', tickets_path %>
+
+<%= link_to @ticket, ticket_path(@ticket, only_path: false) %>

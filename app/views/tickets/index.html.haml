@@ -1,31 +1,34 @@
 %h1#title.text-center Listing tickets
 
-%table{:class=>"table table-striped", :id =>"table"}
-  %thead
-    %tr
-      %th Name
-      %th Email
-      %th Department
-      %th Subject
-      %th Request
-      %th Code
-      %th
-      %th
-      %th
-
-  %tbody
-    - @tickets.each do |ticket|
+.container
+  %table{:class=>"table table-striped", :id =>"table"}
+    %thead
       %tr
-        %td= ticket.name
-        %td= ticket.email
-        %td= ticket.department
-        %td= ticket.subject
-        %td= ticket.request
-        %td= ticket.code
-        %td= link_to 'Show', ticket
-        %td= link_to 'Edit', edit_ticket_path(ticket)
-        %td= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Name
+        %th Email
+        %th Department
+        %th Subject
+        %th Request
+        %th Code
+        %th
+        %tho
+        %th
 
-%br
+    %tbody
+      - @tickets.each do |ticket|
+        %tr
+          %td= ticket.name
+          %td= ticket.email
+          %td= ticket.department
+          %td= ticket.subject
+          %td= ticket.request
+          %td= ticket.code
+          %td= link_to 'Show', ticket
+          %td= link_to 'Edit', edit_ticket_path(ticket)
+          %td= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }
+
+  %br
 
 = link_to 'New Ticket', new_ticket_path, :class => "btn btn-primary", :id => "new_ticket"
+
+= link_to 'df', ticket_path(@ticket, only_path: false)
