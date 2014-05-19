@@ -1,8 +1,8 @@
 class Ticket < ActiveRecord::Base
-  enum status: [ :active, :archived ]
+  enum status: [ :Waiting_for_Staff_Response, :Waiting_for_Customer, :On_Hold, :Cancelled, :Completed ]
   include Codable
 
   belongs_to :user
-  before_save :generate_code
+  before_create :generate_code
 
 end

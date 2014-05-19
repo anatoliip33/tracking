@@ -6,7 +6,7 @@ class CreateTickets < ActiveRecord::Migration
     	t.string :department
     	t.string :subject
     	t.text :request
-      t.string :status
+      t.integer :status, default: 0
       t.string :code
 
       t.timestamps

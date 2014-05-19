@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140517150530) do
     t.string   "department"
     t.string   "subject"
     t.text     "request"
-    t.string   "status"
+    t.integer  "status",     default: 0
     t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"

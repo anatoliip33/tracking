@@ -10,8 +10,9 @@ index do
     column :department
     column :request
     column :code
+    column :status
     column :created_at
-    actionso
+    actions
   end
 
 form do |f|
@@ -20,7 +21,7 @@ form do |f|
       f.input :email
       f.input :department
       f.input :request
-      f.input :status
+      f.input :status, as: :select, collection: Ticket.statuses.keys
     end
     f.actions
   end
