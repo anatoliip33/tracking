@@ -5,5 +5,5 @@ Tracking::Application.routes.draw do
 
   resources :tickets, param: :code
 
-  root to: 'history#index'
+  root to: 'tickets#index'
 end

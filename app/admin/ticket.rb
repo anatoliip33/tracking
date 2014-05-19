@@ -11,7 +11,7 @@ index do
     column :request
     column :code
     column :created_at
-    actions
+    actionso
   end
 
 form do |f|
