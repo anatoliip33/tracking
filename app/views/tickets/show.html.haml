@@ -20,5 +20,13 @@
     %strong Request:
     = @ticket.request
 
+    %p
+    %strong Created At:
+    = @ticket.created_at
+
+    %p
+    %strong Updated At:
+    = @ticket.updated_at
+
   = link_to 'Edit', edit_ticket_path(@ticket), :class => "btn btn-primary"
   = link_to 'Listing tickets', tickets_path, :class => "btn btn-success"

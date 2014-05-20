@@ -8,6 +8,12 @@ ActiveAdmin.register Ticket do
   scope :Cancelled
   scope :Completed
 
+  member_action :send_mail, :method => :post do
+    ticket = Ticket.find(params[:id])
+    ticket.send_mail
+    redirect_to [:admin, :ticket]
+  end
+
 index do
     selectable_column
     id_column
