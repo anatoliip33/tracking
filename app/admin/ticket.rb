@@ -8,10 +8,13 @@ ActiveAdmin.register Ticket do
   scope :Cancelled
   scope :Completed
 
-  member_action :send_mail, :method => :post do
-    ticket = Ticket.find(params[:id])
-    ticket.send_mail
-    redirect_to [:admin, :ticket]
+  member_action :send_answer, :method => :put do
+    respond_to do |format|
+      if @ticket.update(ticket_params)
+        format.html { redirect_to admin_ticket_path(ticket), notice: 'Answer was successfully ' }
+        format.json { head :no_content }
+      end
+    end
   end
 
 index do
@@ -25,6 +28,26 @@ index do
     column :status
     column :created_at
     actions
+  end
+
+  show do |ticket|
+    attributes_table do
+      row :name
+      row :email
+      row :department
+      row :request
+      row :code
+      row :status
+      row :created_at
+      row :updated_at
+      row :answer do
+        form_for send_answer_admin_ticket_path(ticket), method: :put do |f|
+          f.text_area :answer, rows: 6
+          br
+          f.submit
+        end
+      end
+    end
   end
 
 form do |f|

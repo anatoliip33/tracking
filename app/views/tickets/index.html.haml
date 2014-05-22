@@ -7,10 +7,10 @@
         %th Name
         %th Email
         %th Department
-        %th Subject
-        %th Request
         %th Code
         %th Status
+        %th Created At
+        %th Updated At
 
     %tbody
       - @tickets.each do |ticket|
@@ -18,10 +18,10 @@
           %td= ticket.name
           %td= ticket.email
           %td= ticket.department
-          %td= ticket.subject
-          %td= ticket.request
           %td= ticket.code
           %td= ticket.status
+          %td= ticket.created_at
+          %td= ticket.updated_at
 
   %br
 

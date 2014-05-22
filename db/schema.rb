@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140520124807) do
     t.text     "request"
     t.integer  "status",     default: 0
     t.string   "code"
+    t.text     "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
