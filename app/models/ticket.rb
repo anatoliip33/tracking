@@ -6,7 +6,7 @@ class Ticket < ActiveRecord::Base
 
   belongs_to :user
   before_create :generate_code
-  after_save :send_confirmation
+  after_create :send_confirmation
   after_update :send_answer
 
   def send_confirmation

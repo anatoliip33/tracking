@@ -1,6 +1,6 @@
 ActiveAdmin.register Ticket do
 
-  permit_params :id, :name, :email, :department, :subject, :request, :status, :code
+  permit_params :id, :name, :email, :department, :subject, :request, :status, :code, :answer
 
   scope :Waiting_for_Staff_Response, :default => true
   scope :Waiting_for_Customer
@@ -9,6 +9,7 @@ ActiveAdmin.register Ticket do
   scope :Completed
 
   member_action :send_answer, :method => :put do
+  @ticket = Ticket.find(params[:id])
     respond_to do |format|
       if @ticket.update(ticket_params)
         format.html { redirect_to admin_ticket_path(ticket), notice: 'Answer was successfully ' }
@@ -27,6 +28,7 @@ index do
     column :code
     column :status
     column :created_at
+    column :answer
     actions
   end
 
@@ -57,6 +59,13 @@ form do |f|
       f.input :department
       f.input :request
       f.input :status, as: :select, collection: Ticket.statuses.keys
+      f.input :answer do
+        form_for send_answer_admin_ticket_path(ticket), method: :put do |f|
+          f.text_area :answer, rows: 6
+          br
+          f.submit
+        end
+      end
     end
     f.actions
   end

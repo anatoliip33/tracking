@@ -1,4 +1,4 @@
-oclass TicketMailer < ActionMailer::Base
+class TicketMailer < ActionMailer::Base
   default from: "testnikart@gmail.com",
           subject: "ticket answer"
 
@@ -19,4 +19,5 @@ oclass TicketMailer < ActionMailer::Base
 
     mail to: @ticket.email, subject: 'Your answer to ticket'
   end
+
 end
