@@ -5,14 +5,12 @@ ruby "2.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1'
 
-gem 'rails_12factor', group: :production
-
-group :development do
-  gem 'sqlite3'
+group :development, :production do
+  gem 'pg', '0.15.1'
 end
 
-gem 'rails_12factor', group: :production do
-  gem 'pg'
+group :test do
+  gem 'sqlite3', '1.3.6'
 end
 
 # Use SCSS for stylesheets
