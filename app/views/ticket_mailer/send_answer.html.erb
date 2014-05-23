@@ -2,6 +2,8 @@
 
 <p> Your status is now <%= @ticket.status %>.
         Your unique code for your request <%= @ticket.code %>
+        Your ticket was created at <%= @ticket.created_at %>
+        Your ticket was answered at <%= @ticket.updated_at %>
 </p>
 
 <p> Answer for your request is <%= @ticket.answer %>.

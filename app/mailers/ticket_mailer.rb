@@ -17,7 +17,7 @@ class TicketMailer < ActionMailer::Base
     @code = @ticket.code
     @answer = @ticket.answer
 
-    mail to: @ticket.email, subject: 'Your answer to ticket'
+    mail to: @ticket.email, subject: 'Your answer to ticket request'
   end
 
 end

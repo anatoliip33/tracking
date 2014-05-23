@@ -1,5 +1,7 @@
 ActiveAdmin.register Ticket do
 
+  actions :all, except: [:new, :edit]
+
   permit_params :id, :name, :email, :department, :subject, :request, :status, :code, :answer
 
   scope :Waiting_for_Staff_Response, :default => true
@@ -8,27 +10,26 @@ ActiveAdmin.register Ticket do
   scope :Cancelled
   scope :Completed
 
-  member_action :send_answer, :method => :put do
-  @ticket = Ticket.find(params[:id])
-    respond_to do |format|
-      if @ticket.update(ticket_params)
-        format.html { redirect_to admin_ticket_path(ticket), notice: 'Answer was successfully ' }
-        format.json { head :no_content }
-      end
+
+  controller do
+  def update
+    update! do |format|
+      format.html { redirect_to admin_tickets_path, notice: 'Answer to ticket request was successfully sent to customer' }
     end
   end
+end
 
 index do
     selectable_column
-    id_column
     column :name
     column :email
     column :department
+    column :subject
     column :request
     column :code
     column :status
     column :created_at
-    column :answer
+    column :updated_at
     actions
   end
 
@@ -37,16 +38,18 @@ index do
       row :name
       row :email
       row :department
+      row :subject
       row :request
       row :code
-      row :status
       row :created_at
       row :updated_at
-      row :answer do
-        form_for send_answer_admin_ticket_path(ticket), method: :put do |f|
+      row :status do
+        form_for :ticket, method: :put do |f|
+          f.select :status, Ticket.statuses.keys
+          br
           f.text_area :answer, rows: 6
           br
-          f.submit
+          f.submit "Send Answer"
         end
       end
     end
@@ -59,15 +62,13 @@ form do |f|
       f.input :department
       f.input :request
       f.input :status, as: :select, collection: Ticket.statuses.keys
-      f.input :answer do
-        form_for send_answer_admin_ticket_path(ticket), method: :put do |f|
-          f.text_area :answer, rows: 6
-          br
-          f.submit
-        end
-      end
+      f.input :answer
     end
     f.actions
   end
+
+  filter :code
+  filter :subject
+  filter :request
 
 end
