@@ -2,7 +2,12 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def migrate(direction)
     super
     # Create a default user
-    User.new({email: 'admin@example.com', password: 'password', password_confirmation: 'password'}).save(false)
+    newuser = User.new({
+      email: 'admin@example.com',
+      password: 'password',
+      password_confirmation: 'password'})
+    newuser.skip_confirmation!
+    newuser.save
   end
 
   def change
