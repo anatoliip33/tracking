@@ -7,6 +7,8 @@ gem 'rails', '4.1'
 
 group :development, :production do
   gem 'pg', '0.15.1'
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 
 group :test do
