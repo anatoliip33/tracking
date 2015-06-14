@@ -79,5 +79,14 @@ Tracking::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { host: "trackingticket.herokuapp.com" }
+    config.action_mailer.smtp_settings = {
+    address:              'smtp.mandrillapp.com',
+    port:                     587,
+    user_name:          'testnikart@gmail.com',
+    password:            'woIcWLSKxN4IuwClRy_uGg',
+    authentication:      'plain',
+    enable_starttls_auto: true
+  }
+
+  config.action_mailer.default_options = { from: "trackingticket@herokuapp.com" }
 end
