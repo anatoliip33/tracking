@@ -1,8 +1,0 @@
-<h1>Greetings <%= @ticket.name %>,</h1>
-
-<p> Your status is now <%= @ticket.status %>.
-        And here is unique code for your request <%= @ticket.code %>
-        Your ticket was created at <%= @ticket.created_at %>
-</p>
-
-<%= link_to "View you ticket",  ticket_path(@ticket, only_path: false) %>

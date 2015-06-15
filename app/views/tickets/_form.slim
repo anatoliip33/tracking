@@ -1,12 +1,12 @@
 = form_for(@ticket) do |f|
   - if @ticket.errors.any?
     #error_explanation
-      %h2= pluralize(@ticket.errors.count, "error")
-      %h2 prohibited this ticket from being saved:
+      h2= pluralize(@ticket.errors.count, "error")
+      h2 prohibited this ticket from being saved:
 
-      %ul
+      ul
       - @ticket.errors.full_messages.each do |msg|
-        %li= msg
+        li= msg
 
   .field
     = f.label :name

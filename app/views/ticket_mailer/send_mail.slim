@@ -1,0 +1,9 @@
+h1 Greetings #{@ticket.name},
+
+p Your status is now #{@ticket.status}.
+| And here is unique code for your request #{@ticket.code}.
+| Your ticket was created at
+=<l @ticket.created_at.to_time, format: :long
+
+div
+ = link_to "View you ticket",  ticket_path(@ticket, only_path: false), class: "btn btn-primary"

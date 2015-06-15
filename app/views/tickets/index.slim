@@ -1,0 +1,33 @@
+h1#title Listing tickets
+
+.container
+  table#table.table.table-striped
+    thead
+      tr
+        th Name
+        th Email
+        th Department
+        th Subject
+        th Code
+        th Status
+        th Created At
+        th Updated At
+
+    tbody
+      - @tickets.each do |ticket|
+        tr
+          td
+            = link_to ticket.name, ticket
+          td= ticket.email
+          td= ticket.department
+          td= ticket.subject
+          td= ticket.code
+          td= ticket.status
+          td
+            =<l ticket.created_at.to_time, format: :long
+          td
+            =<l ticket.updated_at.to_time, format: :long
+
+  br
+
+= link_to 'New Ticket', new_ticket_path, class: "btn btn-primary", id: "new_ticket"

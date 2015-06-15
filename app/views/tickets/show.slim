@@ -1,0 +1,28 @@
+p#notice
+  = notice
+.container
+  p
+    strong Name:
+    =< @ticket.name
+
+  p
+    strong Email:
+    =< @ticket.email
+
+  p
+    strong Department:
+    =< @ticket.department
+
+  p
+    strong Subject:
+    =< @ticket.subject
+
+  p
+    strong Request:
+    =< @ticket.request
+
+    p
+    strong Created At:
+    =<l @ticket.created_at.to_time, format: :long
+
+  = link_to 'Listing tickets', tickets_path, class: "btn btn-success"

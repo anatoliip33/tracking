@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'tzinfo-data'
 
 
 group :test do

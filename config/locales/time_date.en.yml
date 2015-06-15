@@ -1,0 +1,18 @@
+en:
+  date:
+    formats:
+      day_only: "%A"
+      default: "%d.%m.%Y"
+      short: "%d %b"
+      long: "%-d %B %Y"
+      middle: "%A, %d %B"
+      date_only: "%d"
+      month_only: "%B"
+      time: "%H:%M"
+
+time:
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S"
+      short: "%d %b, %H:%M"
+      long: "%d %B %Y, %H:%M"
+      time: "%H:%M"
