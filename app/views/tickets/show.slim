@@ -1,28 +1,28 @@
 p#notice
   = notice
-.container
-  p
-    strong Name:
-    =< @ticket.name
+p
+  strong Department:
+  =< @ticket.department
+
+p
+  strong Subject:
+  =< @ticket.subject
+
+p
+  strong Request:
+  =< @ticket.request
 
   p
-    strong Email:
-    =< @ticket.email
+  strong Created At:
+  =<l @ticket.created_at.to_time, format: :long
 
   p
-    strong Department:
-    =< @ticket.department
+  strong Status:
+  =< @ticket.status
 
-  p
-    strong Subject:
-    =< @ticket.subject
-
-  p
-    strong Request:
-    =< @ticket.request
-
+  - unless @ticket.created_at.to_time == @ticket.updated_at.to_time
     p
-    strong Created At:
-    =<l @ticket.created_at.to_time, format: :long
+    strong Updated At:
+    =<l @ticket.updated_at.to_time, format: :long
 
-  = link_to 'Listing tickets', tickets_path, class: "btn btn-success"
+= link_to 'Listing tickets', tickets_path, class: "btn btn-success"

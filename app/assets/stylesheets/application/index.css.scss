@@ -1,15 +1,12 @@
 #title {
-      margin: 30px 0 30px 50px;
-	color: green
+  margin-bottom: 20px;
+  color: green
 }
 
 .container{
+  width: 100%;
   display: block;
-  margin: 50px 0 0 30px;
-}
-
-#new_ticket{
-  margin-left: 50px;
+  padding: 10px 20px 30px 30px;
 }
 
 .quirck{
@@ -19,4 +16,34 @@
 
 #top{
   margin-top:20px;
+}
+
+.field{
+  margin-top: 20px;
+}
+
+#notice {
+  color: green;
+}
+
+#error_explanation {
+  width: 250px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  ul li {
+    font-size: 14px;
+    list-style: square;
+  }
+}
+
+.inputbox_error .form-control{
+  border: 2px solid #ed6250;
+}
+
+.inputbox_error .form-control:focus{
+  background: #fff;
+  border-color: #dcdccd;
 }
