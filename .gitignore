@@ -14,3 +14,24 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Uploads
+/public/system
+
+# TextEdit
+*~
+
+# Vim
+*.swp
+*.swo
+
+*.DS_Store
+/app/views/.DS_Store
+/app/views/home/.DS_Store
+/db/schema.rb
+
+# Assets
+/public/assets/
+
+# Mac
+.DS_Store
