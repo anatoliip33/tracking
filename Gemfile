@@ -4,11 +4,14 @@ ruby "2.0.0"
 
 gem 'rails', '4.1'
 
-group :development, :production do
-  gem 'pg', '0.15.1'
-  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
-end
+gem 'pg'
+
+gem 'rails_12factor', group: :production
+
+# group :production do
+#   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+#   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+# end
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'slim'
@@ -36,6 +39,7 @@ group :development do
   gem 'thin'
   gem 'quiet_assets'
   gem 'letter_opener'
-  gem 'binding_of_caller'
+  # gem 'binding_of_caller'
+  # gem "better_errors"
   gem 'pry-rails'
 end
