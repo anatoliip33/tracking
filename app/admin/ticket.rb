@@ -5,10 +5,6 @@ ActiveAdmin.register Ticket do
 
   permit_params :name, :email, :department, :subject, :request, :code, :answer, :status_id
 
-  # scope :Waiting_for_Staff_Response, :default => true
-  # scope :Waiting_for_Customer
-  # scope :On_Hold
-  # scope :Cancelled
   scope "New unassigned tickets"
   scope "Open tickets"
   scope 'On hold tickets'
@@ -46,15 +42,6 @@ index do
       row :status
       row :created_at
       row :updated_at
-      # row :status do
-      #   form_for :ticket, method: :put do |f|
-      #     f.select :status, Ticket.statuses.keys
-      #     br
-      #     f.text_area :answer, rows: 6
-      #     br
-      #     f.submit "Send Answer"
-      #   end
-      # end
     end
   end
 
@@ -65,7 +52,6 @@ form do |f|
       f.input :department
       f.input :request
       f.input :status, include_blank: false
-      # f.input :status, as: :select, collection: Ticket.statuses.keys
       f.input :answer
     end
     f.actions
