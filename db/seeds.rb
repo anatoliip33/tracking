@@ -1,3 +1,17 @@
+User.create(
+  email: 'admin@example.com',
+  password: 'password',
+  password_confirmation: 'password'
+  )
+
+status_titles = ['Waiting for Staff Response', 'Waiting for Customer', 'On Hold', 'Cancelled', 'Completed']
+
+5.times do |i|
+  Status.create({
+    title: status_titles[i % status_titles.length],
+  })
+end
+
 Ticket.create(
   name: 'Petya',
   email: 'petya@roshen.com',
@@ -5,17 +19,3 @@ Ticket.create(
   subject: 'oracle',
   request: 'When will I become a president? In first tour of elections, second tour or never'
   )
-
-User.create(
-  email: 'admin@example.com',
-  password: 'password',
-  password_confirmation: 'password'
-  )
-
-status_titles = ['Новые не обработанные ', 'Открытые запросы', 'Запросы в ожидании', 'Закрытые запросы']
-
-4.times do |i|
-  Status.create({
-    title: status_titles[i % status_titles.length],
-  })
-end

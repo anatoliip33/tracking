@@ -1,6 +1,8 @@
 ActiveAdmin.register Status do
+  menu priority: 3
 
-  
+  # filter :tickets
+
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -13,5 +15,5 @@ ActiveAdmin.register Status do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-  
+
 end

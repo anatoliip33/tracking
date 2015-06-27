@@ -1,15 +1,18 @@
 ActiveAdmin.register Ticket do
+  menu priority: 2
 
-  actions :all, except: [:new, :edit]
+  actions :all, except: [:new]
 
-  permit_params :id, :name, :email, :department, :subject, :request, :code, :answer
+  permit_params :name, :email, :department, :subject, :request, :code, :answer, :status_id
 
   # scope :Waiting_for_Staff_Response, :default => true
   # scope :Waiting_for_Customer
   # scope :On_Hold
   # scope :Cancelled
-  # scope :Completed
-
+  scope "New unassigned tickets"
+  scope "Open tickets"
+  scope 'On hold tickets'
+  scope 'Closed tickets'
 
   controller do
   def update
@@ -26,7 +29,7 @@ index do
     column :subject
     column :request
     column :code
-    # column :status
+    column :status
     column :created_at
     column :updated_at
     actions
@@ -40,6 +43,7 @@ index do
       row :subject
       row :request
       row :code
+      row :status
       row :created_at
       row :updated_at
       # row :status do
@@ -60,6 +64,7 @@ form do |f|
       f.input :email
       f.input :department
       f.input :request
+      f.input :status, include_blank: false
       # f.input :status, as: :select, collection: Ticket.statuses.keys
       f.input :answer
     end

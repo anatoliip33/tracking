@@ -22,7 +22,7 @@ table#table.table.table-striped
         td= ticket.code
         td
           =<l ticket.created_at.to_time, format: :long
-        td= ticket.status
+        td= ticket.status.title
         - if ticket.created_at.to_time == ticket.updated_at.to_time
           td
         - else
