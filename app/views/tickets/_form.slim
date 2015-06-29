@@ -16,7 +16,7 @@
     = f.label :email
     - if @ticket.errors[:email][0]
       .quirck.inputbox_error
-        = f.text_field :email, class: "form-control"
+        = f.email_field :email, class: "form-control"
     - else
       .quirck
         = f.text_field :email, :class=>"form-control"

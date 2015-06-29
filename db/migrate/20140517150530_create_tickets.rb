@@ -6,7 +6,6 @@ class CreateTickets < ActiveRecord::Migration
     	t.string :department
     	t.string :subject
     	t.text :request
-      # t.integer :status, default: 0
       t.string :code
       t.text :answer
 
